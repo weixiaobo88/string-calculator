@@ -64,4 +64,16 @@ public class StringCalculatorTest {
         //then
         assertEquals(6, result);
     }
+
+    @Test
+    public void should_return_the_sum_when_calculate_given_the_separator_in_first_line_and_numbers() {
+        //given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        int result = stringCalculator.add("//;\n1;2");
+
+        //then
+        assertEquals(3, result);
+    }
 }
