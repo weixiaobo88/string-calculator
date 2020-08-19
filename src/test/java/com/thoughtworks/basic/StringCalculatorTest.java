@@ -52,4 +52,16 @@ public class StringCalculatorTest {
         //then
         assertEquals(6, result);
     }
+
+    @Test
+    public void should_return_the_sum_when_calculate_given_any_amount_numbers_with_new_line_or_comma_as_separator() {
+        //given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        int result = stringCalculator.add("1\n2,3");
+
+        //then
+        assertEquals(6, result);
+    }
 }

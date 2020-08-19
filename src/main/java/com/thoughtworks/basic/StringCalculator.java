@@ -6,6 +6,8 @@ class StringCalculator {
 
     int add(String string) {
         String NUMBER_SEPARATOR = ",";
+        String LINE_SEPARATOR = "\n";
+        String separators = "[" + NUMBER_SEPARATOR + LINE_SEPARATOR + "]";
 
         if (string.isEmpty()) {
             return 0;
@@ -15,9 +17,13 @@ class StringCalculator {
             return parseToInt(string);
         }
 
-        return Arrays.stream(string.split(NUMBER_SEPARATOR))
+        return Arrays.stream(splitBySeparators(string, separators))
                 .mapToInt(this::parseToInt)
                 .sum();
+    }
+
+    private String[] splitBySeparators(String string, String separators) {
+        return string.split(separators);
     }
 
     private int parseToInt(String string) {
