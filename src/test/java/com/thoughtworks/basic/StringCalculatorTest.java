@@ -28,4 +28,16 @@ public class StringCalculatorTest {
         //then
         assertEquals(1, result);
     }
+
+    @Test
+    public void should_return_the_sum_when_calculate_given_two_numbers() {
+        //given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        int result = stringCalculator.add("1,2");
+
+        //then
+        assertEquals(3, result);
+    }
 }
