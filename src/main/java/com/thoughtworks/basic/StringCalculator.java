@@ -9,11 +9,15 @@ class StringCalculator {
         }
 
         if (string.length() == 1) {
-            return Integer.parseInt(string);
+            return parseToInt(string);
         }
 
         return Arrays.stream(string.split(","))
-                .mapToInt(Integer::parseInt)
+                .mapToInt(this::parseToInt)
                 .sum();
+    }
+
+    private int parseToInt(String string) {
+        return Integer.parseInt(string);
     }
 }
