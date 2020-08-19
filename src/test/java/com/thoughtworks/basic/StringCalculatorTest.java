@@ -40,4 +40,16 @@ public class StringCalculatorTest {
         //then
         assertEquals(3, result);
     }
+
+    @Test
+    public void should_return_the_sum_when_calculate_given_any_amount_numbers() {
+        //given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        int result = stringCalculator.add("1,2,3");
+
+        //then
+        assertEquals(6, result);
+    }
 }
