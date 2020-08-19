@@ -16,4 +16,16 @@ public class StringCalculatorTest {
         //then
         assertEquals(0, result);
     }
+
+    @Test
+    public void should_return_the_number_when_calculate_given_one_number() {
+        //given
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        int result = stringCalculator.add("1");
+
+        //then
+        assertEquals(1, result);
+    }
 }
