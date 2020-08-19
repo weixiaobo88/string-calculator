@@ -3,7 +3,10 @@ package com.thoughtworks.basic;
 import java.util.Arrays;
 
 class StringCalculator {
+
     int add(String string) {
+        String NUMBER_SEPARATOR = ",";
+
         if (string.isEmpty()) {
             return 0;
         }
@@ -12,7 +15,7 @@ class StringCalculator {
             return parseToInt(string);
         }
 
-        return Arrays.stream(string.split(","))
+        return Arrays.stream(string.split(NUMBER_SEPARATOR))
                 .mapToInt(this::parseToInt)
                 .sum();
     }
